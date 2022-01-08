@@ -4,6 +4,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
 
+    // for (i = 0; i < buttons.length; i++); -- the code below does the same thing
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "submit") {
@@ -16,10 +17,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// for (i = 0; i < buttons.length; i++); -- the code below does the same thing
-
+/**
+ * The main game "loop", called when the script is first loaded
+ * and after the user's answer has been processed
+ */
 function runGame() {
 
+    // Creates two random numbers between 1 and 25 (or maybe 24)
+    let num1 = Math.floor(Math.random() * 25) + 1;
+    let num2 = Math.floor(Math.random() * 25) + 1;
 }
 
 function checkAnswer() {
