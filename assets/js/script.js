@@ -36,7 +36,7 @@ function runGame(gameType) {
 	// Math.floor rounds down to the whole number
 	// Math.random generates random numbers
 
-	document.getElementById("answer-box").value = "";
+	//document.getElementById("answer-box").value = "";
 	document.getElementById("answer-box").focus();
 
 	let num1 = Math.floor(Math.random() * 25) + 1;
@@ -57,6 +57,10 @@ function runGame(gameType) {
 
 }
 
+/**
+ * Gets the operands (the numbers) and the operator (plus, minus etc)
+ * directly from the dom, and returns the correct answer.
+ */
 function checkAnswer() {
 
 	// Checks the answer against the first element in
@@ -78,6 +82,12 @@ function checkAnswer() {
 
 }
 
+
+/**
+ * Gets the operands (the numbers) and the operator (plus, minus etc)
+ * directly from the dom, and returns the correct answer.
+ */
+
 function calculateCorrectAnswer() {
 
 	// Gets the operands (the numbers) and the operator (plus, minus etc)
@@ -87,6 +97,7 @@ function calculateCorrectAnswer() {
 	let operand2 = parseInt(document.getElementById("operand2").textContent);
 	let operator = document.getElementById("operator").textContent;
     console.log('*****', operator, operand1, operand2)
+
 	if (operator === "+") {
 		return [operand1 + operand2, "addition"];
 	} else if (operator === "x") {
@@ -101,6 +112,9 @@ function calculateCorrectAnswer() {
 	}
 }
 
+/**
+ * Gets the current score from the DOM and increments it by 1
+ */
 function incrementScore() {
 
 	// Gets the current score from the DOM and increments it
@@ -110,6 +124,9 @@ function incrementScore() {
 
 }
 
+/**
+ * Gets the current tally of incorrect answers from the DOM and increments it by 1
+ */
 function incrementWrongAnswer() {
 
 	// Gets the current tally of incorrect answers from the DOM and increments it
